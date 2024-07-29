@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    background: #111827;
+}
+
+.bg-flowbite{
+    background: #0d1321;
+}

@@ -7,9 +7,11 @@ import Home from "./pages/Home.jsx"
 function App() {
   return (
     <>
-      <BaseLayout>
-        <Home/>
-      </BaseLayout>
+      <div className="flex flex-col h-screen">
+        <BaseLayout>
+          <Home />
+        </BaseLayout>
+      </div>
     </>
   )
 }
