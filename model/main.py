@@ -1,5 +1,13 @@
 from transformers import pipeline
 
+from fastapi import FastAPI
+
+from pydantic import BaseModel
+
+class gen(BaseModel):
+    role: str
+    content: str
+
 messages = [
     {"role": "user", "content": "Кто ты?"},
 ]
@@ -11,3 +19,10 @@ def data(text):
 
 for out in pipe(data(messages)):
     print(out)
+
+
+app = FastAPI()
+
+@app.post("/")
+def gen(Gen: gen):
+    return pipe([{"role": gen.role, "content": gen.content},])
